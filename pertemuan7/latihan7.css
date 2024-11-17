@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    font-size: 24px;
+    color: chocolate;
+    font-family: 'courier new', Courier, monospace;
+    letter-spacing: spx;
+  }
+  fieldset,legend{
+    border:10px
+    padding: 5px 10px;
+    border-radius: 45px;
+  }
+  legend{background-color: brown;
+}
+fieldset{
+    /* background-color:rgb(75, 71, 71); */
+    background: linear-gradient(#284f4f 20%, #6eaec0 40%, #96cdf0 60%, #aecfe4 65%, #a8dde6 80%);
+}
+body{
+    background-color: #366572;
+}

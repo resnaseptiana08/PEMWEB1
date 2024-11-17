@@ -1,0 +1,44 @@
+
+#home{
+    background-color: rgb(18, 36, 36);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: beige;
+}
+
+#home img{
+    width: 100px;
+    height: 100px;
+}
+
+#nav{
+    display: flex;
+    justify-content: center;
+}
+
+#nav a{
+    padding: 5px 10px;
+    color: rgb(3, 3, 3);
+    list-style: none;
+    text-decoration: none;
+}
+#gallery{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-around;
+}
+#gallery img{
+    width: 400px;
+}
+
+#home img{
+    width: 500px;
+    height: 500px;
+}
+
+#home div div{
+    display: flex;
+    justify-content: center;
+}
