@@ -1,0 +1,26 @@
+table {
+    width: 80%; 
+    border-collapse: collapse; 
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    width: 25%; 
+}
+
+tr {
+    height: 50px; 
+}
+
+td {
+    background-color: pink;
+}
+
+th {
+    background-color: skyblue;
+}

@@ -1,0 +1,73 @@
+<script>
+    //array of object
+    let p1 = {'nip':'111', 'nama':'Budi Santoso','jabatan':'Manager','status':'Menikah','agama':'Islam'};
+    let p2 = {'nip':'112', 'nama':'Siti Aminah','jabatan':'Asisten Manager','status':'Belum','agama':'Islam'};
+    let p3 = {'nip':'113', 'nama':'Alissa','jabatan':'Supervisor','status':'Menikah','agama':'Kristen Protestan'};
+    let p4 = {'nip':'114', 'nama':'I Putu Gede','jabatan':'Staff','status':'Belum','agama':'Hindu'};
+    let p5 = {'nip':'115', 'nama':'Sri Rezeki','jabatan':'Staff','status':'Menikah','agama':'Budha'};
+    //array assosiative
+    let pegawai = [p1,p2,p3,p4,p5];
+    //array scalar
+    const judul = ['NO', 'NIP','NAMA','JABATAN','STATUS','AGAMA','GAPOK','BPJS','ZAKAT','GABER','TUNJAB','TUNKEL']
+    //fungsi pemisah ribuan
+    function formatRupiah(angka) {
+    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR'}).format(angka);
+    }
+    </script>
+    <h3 align="center">DAFTAR PEGAWAI</h3>
+    <table align="center" border="1" width="60%" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr bgcolor="green" id="header">
+            </tr>
+        </thead>
+        <script>
+            let data_judul_kolom = '';
+            // lopping judul kolom dari array scalar judul
+            for (const jdl of judul){
+                data_judul_kolom += `<th>${jdl}</th>`;
+            }
+            document.getElementById("header").innerHTML = data_judul_kolom;
+        </script>
+        <tbody>
+        <script>
+        let no = 1;
+        for(let peg of pegawai){
+            switch(peg.jabatan){
+            case 'Manager': gapok = 15000000; break;
+            case 'Asisten Manager': gapok = 10000000; break;
+            case 'Supervisor': gapok = 7500000; break;
+            case 'Staff': gapok = 3000000; break;
+            default: gapok = 0; break;
+        }
+        //-------------cari tunjab => 20% dari gapok-----------------
+        let tunjab = 0.2 * gapok;
+        //-------------cari bpjs => 5% dari gapok-----------------
+        let bpjs = 0.05 * gapok
+        //cari tukel => 10% dari gapok untuk yg sudah menikah (gunakan ternary)
+        let tunkel = (peg.status = 'Menikah') ? 0.1 * gapok : 0;
+        //gaji kotor
+        let gator = gapok + tunjab + bpjs + tunkel;
+        //cari zakat => 2,5% dari gaji kotor untuk yg muslim dan gaji kotor minimal 7jt
+        let zakat = (peg.agama == 'Islam' && gator >= 7000000) ? 0.025 * gator : 0;
+        //cari gaji bersih
+        let gaber = gator - zakat;
+        // warna-warni baris
+        let warna = (no % 2 == 1)? 'khaki' : 'beige';
+        document.write(`<tr bgcolor="${warna}">
+            <td>${no++}</td>
+            <td>${peg.nip}</td>
+            <td>${peg.nama}</td>
+            <td>${peg.jabatan}</td>
+            <td>${peg.status}</td>
+            <td>${peg.agama}</td>
+            <td align="right">${formatRupiah(gapok)}</td>
+            <td align="right">${formatRupiah(tunjab)}</td>
+            <td align="right">${formatRupiah(bpjs)}</td>
+            <td align="right">${formatRupiah(tunkel)}</td>
+            <td align="right">${formatRupiah(zakat)}</td>
+            <td align="right">${formatRupiah(gaber)}</td>
+            </tr>`);
+        }
+        </script>
+        </tbody>
+    </table>

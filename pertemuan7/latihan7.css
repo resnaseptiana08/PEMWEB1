@@ -5,11 +5,13 @@ h1{
     font-family: 'courier new', Courier, monospace;
     letter-spacing: spx;
   }
+
   fieldset,legend{
     border:10px
     padding: 5px 10px;
     border-radius: 45px;
   }
+
   legend{background-color: brown;
 }
 fieldset{

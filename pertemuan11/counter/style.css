@@ -1,0 +1,11 @@
+body{
+    background-color: cadetblue;
+}
+marquee{
+    width: 100%;
+}
+button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: large;
+}

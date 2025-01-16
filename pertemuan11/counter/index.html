@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat penghitung berapa kali tombol ditekan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1 id="counter-title">jumlah tombol ditekan : <span id="counter">0</span>kali</h1>
+<marquee behavior="alternate" onmouseover="stop()" onmouseout="start()">
+<button type="button" id="button" onclick="counter()">tekan saya!</button>
+</marquee>
+</body>
+
+<script src="script.js"></script>
+</html>
